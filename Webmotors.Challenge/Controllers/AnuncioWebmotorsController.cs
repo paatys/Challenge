@@ -17,7 +17,7 @@ namespace Webmotors.Challenge.Controllers
 
         public AnuncioWebmotorsController(DbConnection context)
         {
-            initDB.Initialize(context);
+            //initDB.Initialize(context);
             _context = context;
         }
 

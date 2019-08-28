@@ -23,9 +23,34 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\jquery\**" />
+    <Compile Remove="ClientApp\src\pages\Create\**" />
+    <Compile Remove="ClientApp\src\pages\Show\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\jquery\**" />
+    <Content Remove="ClientApp\src\pages\Create\**" />
+    <Content Remove="ClientApp\src\pages\Show\**" />
+    <EmbeddedResource Remove="ClientApp\jquery\**" />
+    <EmbeddedResource Remove="ClientApp\src\pages\Create\**" />
+    <EmbeddedResource Remove="ClientApp\src\pages\Show\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\jquery\**" />
+    <None Remove="ClientApp\src\pages\Create\**" />
+    <None Remove="ClientApp\src\pages\Show\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\jquery\jquery.js" />
+    <None Remove="ClientApp\jquery\jquery.min.js" />
+    <None Remove="ClientApp\jquery\jquery.min.map" />
+    <None Remove="ClientApp\src\pages\Create\index.js" />
+    <None Remove="ClientApp\src\pages\Show\index.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\pages\Add\" />
+    <Folder Include="ClientApp\src\pages\Edit\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
